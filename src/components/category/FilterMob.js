@@ -17,7 +17,6 @@ const FilterMob = ({ unfilteredData, handleFilterData }) => {
   };
 
   const handleClose = () => {
-    console.log("aaa");
     setAnchorEl(null);
   };
 

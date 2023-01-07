@@ -47,9 +47,12 @@ const Details = () => {
         justifyContent: "space-between",
         alignItems: "center",
         p: 5,
-        backgroundColor: theme.palette.mode === "light" ? "#3B8AD9" : "#5D5D5D",
       }}
-      className={"Details"}
+      className={
+        theme.palette.mode === "light"
+          ? "bg-lightBlue__light"
+          : "bg-lightBlue__dark"
+      }
     >
       {isLoading ? (
         <Box sx={{ width: "90%", maxWidth: "550px", height: "70vh" }}>
@@ -62,7 +65,7 @@ const Details = () => {
             maxWidth: "550px",
             p: 2,
             backgroundColor:
-              theme.palette.mode === "light" ? "rgb(240, 240, 240)" : "#272727",
+              theme.palette.mode === "light" ? "rgb(200, 200, 200)" : "#272728",
           }}
         >
           <Box>
@@ -111,13 +114,10 @@ const Details = () => {
                 {data.title}
               </Typography>
               <Typography
-                align={"left"}
-                sx={{ mt: 4, mb: 1 }}
+                align={"center"}
                 variant="inherit"
+                sx={{ mt: 4, mb: 1 }}
               >
-                Description:
-              </Typography>
-              <Typography align={"center"} variant="inherit">
                 {data.description}
               </Typography>
             </CardContent>

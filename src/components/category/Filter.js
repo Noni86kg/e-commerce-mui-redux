@@ -116,6 +116,14 @@ const Filter = ({ data, handleFilterData, isMob, handleClose }) => {
   };
 
   useEffect(() => {
+    setFiveStar(true);
+    setFourStar(true);
+    setThreeStar(true);
+    setTwoStar(true);
+    setOneStar(true);
+  }, [data]);
+
+  useEffect(() => {
     const { minNumb, maxNumb } = handlePriceRange();
     setMinRange(minNumb);
     setMaxRange(maxNumb);

@@ -49,12 +49,11 @@ const Category = ({ path }) => {
 
   return (
     <Box
-      sx={{
-        backgroundColor:
-          theme.palette.mode === "light"
-            ? "rgba(59, 138, 217, .2)"
-            : "rgba(93, 93, 93, .2)",
-      }}
+      className={
+        theme.palette.mode === "light"
+          ? "bg-lightBlue__light"
+          : "bg-lightBlue__dark"
+      }
     >
       {isLoading ? (
         <SkeletonChildren numOfChildren={15} isGrid />

@@ -2,6 +2,18 @@ body {
   margin: 0;
 }
 
+.bg-lightBlue__light {
+  background-color: rgba(59, 138, 217, 0.2);
+}
+
+.bg-lightBlue__dark {
+  background-color: rgba(93, 93, 93, 0.2);
+}
+
+.StyledInputBase input {
+  width: 100% !important;
+}
+
 .react-swipeable-view-container img {
   filter: brightness(50%);
 }

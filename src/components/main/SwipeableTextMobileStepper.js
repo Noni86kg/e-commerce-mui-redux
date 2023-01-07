@@ -94,6 +94,7 @@ const SwipeableTextMobileStepper = () => {
             fontWeight: 700,
             letterSpacing: { xs: "0.5px", md: "2px" },
             cursor: "pointer",
+            textAlign: "center",
           }}
         >
           {images[activeStep].label}

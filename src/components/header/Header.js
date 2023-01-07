@@ -105,6 +105,8 @@ const Header = () => {
               <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
+                className={"StyledInputBase"}
+                sx={{ width: "100%" }}
               />
             </Search>
           </Box>

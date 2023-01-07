@@ -30,11 +30,15 @@ const Cart = () => {
   return (
     <Box
       sx={{
-        backgroundColor: theme.palette.mode === "light" ? "#3B8AD9" : "#5D5D5D",
         width: "100%",
         py: 5,
         minHeight: "70vh",
       }}
+      className={
+        theme.palette.mode === "light"
+          ? "bg-lightBlue__light"
+          : "bg-lightBlue__dark"
+      }
     >
       {userCart.length ? (
         <Box

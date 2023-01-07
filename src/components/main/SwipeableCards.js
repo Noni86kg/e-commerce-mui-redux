@@ -84,9 +84,11 @@ const SwipeableCards = () => {
 
   return (
     <Box
-      sx={{
-        backgroundColor: theme.palette.mode === "light" ? "#3B8AD9" : "#5D5D5D",
-      }}
+      className={
+        theme.palette.mode === "light"
+          ? "bg-lightBlue__light"
+          : "bg-lightBlue__dark"
+      }
     >
       {isLoading ? (
         <SkeletonChildren numOfChildren={numOfChildren} />
@@ -137,10 +139,6 @@ const SwipeableCards = () => {
             axis={theme.direction === "rtl" ? "x-reverse" : "x"}
             index={activeStep}
             className={"SwipeableViews"}
-            style={{
-              backgroundColor:
-                theme.palette.mode === "light" ? "#3B8AD9" : "#5D5D5D",
-            }}
           >
             {data?.map((item, index) => (
               <ProductCard item={item} key={item.id} isSwipeableViews />
