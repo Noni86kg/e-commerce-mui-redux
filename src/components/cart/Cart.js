@@ -129,14 +129,14 @@ const Cart = () => {
                         }}
                       >
                         <IconButton
-                          sx={{ p: 1, fontSize: "1rem" }}
+                          sx={{ p: 1, fontSize: "1rem", color: "white" }}
                           onClick={() => changeHowMany(id, howMany - 1)}
                         >
                           -
                         </IconButton>
                         <Box>{howMany}</Box>
                         <IconButton
-                          sx={{ p: 1, fontSize: "1rem" }}
+                          sx={{ p: 1, fontSize: "1rem", color: "white" }}
                           onClick={() => changeHowMany(id, howMany + 1)}
                         >
                           +
