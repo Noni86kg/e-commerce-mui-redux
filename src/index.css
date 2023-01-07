@@ -1,13 +1,79 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.react-swipeable-view-container img {
+  filter: brightness(50%);
+}
+
+.swipeableTextMobileStepper button {
+  display: none;
+}
+
+.swipeableTextMobileStepper:hover button {
+  display: inline-flex;
+}
+
+.SwipeableViews .react-swipeable-view-container > div {
+  width: calc(100% / 6) !important;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1536px) {
+  .SwipeableViews .react-swipeable-view-container > div {
+    width: calc(100% / 5) !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .SwipeableViews .react-swipeable-view-container > div {
+    width: calc(100% / 4) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .SwipeableViews .react-swipeable-view-container > div {
+    width: calc(100% / 2) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .SwipeableViews .react-swipeable-view-container > div {
+    width: 100% !important;
+  }
+}
+
+.Card-Title {
+  font-size: 16px !important;
+}
+
+.ProductCard {
+  height: calc(100% - 48px);
+  padding: 24px;
+}
+
+.ProductCard-price,
+.Details-price {
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
+}
+
+.rangeSlider__light span {
+  color: #1976d2;
+}
+
+.rangeSlider__light span svg {
+  color: var(--mui-palette-primary-main);
+}
+
+.rangeSlider__dark span {
+  color: #272727;
+}
+
+.rangeSlider__dark span svg {
+  color: #272727;
+}
+
+.FilterMob .MuiPaper-root {
+  background-color: white !important;
 }
