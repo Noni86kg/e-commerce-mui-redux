@@ -57,11 +57,11 @@ const Filter = ({ data, handleFilterData, isMob, handleClose }) => {
 
   const marks = [
     {
-      value: 0,
+      value: minRange,
       label: `$${minRange}`,
     },
     {
-      value: 100,
+      value: maxRange,
       label: `$${maxRange}`,
     },
   ];
@@ -121,14 +121,11 @@ const Filter = ({ data, handleFilterData, isMob, handleClose }) => {
     setThreeStar(true);
     setTwoStar(true);
     setOneStar(true);
-  }, [data]);
-
-  useEffect(() => {
     const { minNumb, maxNumb } = handlePriceRange();
     setMinRange(minNumb);
     setMaxRange(maxNumb);
     setValue([minNumb, maxNumb]);
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     const filteredData = handleAllChanges();
@@ -184,6 +181,8 @@ const Filter = ({ data, handleFilterData, isMob, handleClose }) => {
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
           marks={marks}
+          min={minRange}
+          max={maxRange}
           sx={{
             color: isLight ? "#1976D2" : "#272727",
           }}

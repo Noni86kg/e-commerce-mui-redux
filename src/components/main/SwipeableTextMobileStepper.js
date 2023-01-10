@@ -19,7 +19,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    path: "/",
+    path: "/all-products",
     label: "Welcome to fake Store",
     imgPath: openImg,
   },
