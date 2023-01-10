@@ -87,7 +87,7 @@ const DropDownMenu = () => {
         </MenuItem>
 
         <MenuItem
-          onClick={() => handleNavigate("/women's-clouthing")}
+          onClick={() => handleNavigate("/women's-clothing")}
           sx={{
             color: theme.palette.mode === "light" ? "black" : "white",
           }}

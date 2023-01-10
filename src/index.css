@@ -89,3 +89,21 @@ body {
 .FilterMob .MuiPaper-root {
   background-color: white !important;
 }
+
+.cart--icon__hover--div {
+  position: relative;
+}
+
+.cart--icon__hover {
+  position: absolute;
+  display: none;
+  right: 0px;
+  width: 350px;
+  z-index: 5;
+}
+
+@media (min-width: 1000px) {
+  .cart--icon:hover .cart--icon__hover {
+    display: block;
+  }
+}

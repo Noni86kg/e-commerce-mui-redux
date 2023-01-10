@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import { useTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   howManyProduct,
@@ -12,10 +12,10 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import EmptyCartImg from "../../assets/emptyCart.webp";
 
-const Cart = () => {
-  const { userCart, totalPrice } = useSelector((state) => state.cart);
-  const theme = useTheme();
+const HoverCart = () => {
+  const { userCart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const changeHowMany = (id, num) => {
     if (num !== 0) {
@@ -27,32 +27,26 @@ const Cart = () => {
     dispatch(removeSelectedProduct(id));
   };
 
+  const handleNavigate = () => {
+    navigate("/cart");
+  };
+
   return (
     <Box
       sx={{
-        width: "100%",
-        py: 5,
-        minHeight: "70vh",
+        pt: 1,
       }}
-      className={
-        theme.palette.mode === "light"
-          ? "bg-lightBlue__light"
-          : "bg-lightBlue__dark"
-      }
     >
       {userCart.length ? (
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            width: "90%",
-            maxWidth: "550px",
-            mx: "auto",
             backgroundColor: "white",
-            borderRadius: "15px",
+            boxShadow: 3,
           }}
         >
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 4, m: 4 }}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
             {userCart.map((item, index) => {
               const { image, title, price, id, howMany } = item;
 
@@ -62,9 +56,9 @@ const Cart = () => {
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: 4,
                     borderBottom: "1px solid black",
                     p: 2,
+                    gap: 1,
                   }}
                 >
                   <Box
@@ -72,11 +66,13 @@ const Cart = () => {
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "flex-start",
-                      gap: 5,
+                      gap: 2,
                       color: "#272727",
                     }}
                   >
-                    <Typography variant="h6">{title}</Typography>
+                    <Typography sx={{ fontSize: "16px" }} variant="h6">
+                      {title}
+                    </Typography>
                     <CloseIcon
                       onClick={() => deleteItem(id)}
                       sx={{
@@ -89,14 +85,14 @@ const Cart = () => {
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "flex-end",
-                      gap: 5,
+                      gap: 2,
                     }}
                   >
                     <Box
                       sx={{
                         overflow: "hidden",
                         width: "20%",
-                        minWidth: "100px",
+                        minWidth: "50px",
                       }}
                     >
                       <Box
@@ -114,17 +110,14 @@ const Cart = () => {
                     <Box
                       sx={{
                         display: "flex",
-                        justifyContent: "space-between",
-                        flexDirection: { xs: "column", md: "row" },
-                        width: "100%",
-                        alignItems: { xs: "flex-end", md: "flex-start" },
-                        gap: 4,
+                        alignItems: "flex-end",
+                        gap: 2,
                       }}
                     >
                       <Box
                         sx={{
                           display: "flex",
-                          gap: 1,
+                          gap: 2,
                           px: 2,
                           borderRadius: "50px",
                           backgroundColor: "#272727",
@@ -146,20 +139,12 @@ const Cart = () => {
                           +
                         </IconButton>
                       </Box>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "flex-end",
-                        }}
+                      <Typography
+                        variant="h6"
+                        sx={{ fontWeight: "600", color: "black" }}
                       >
-                        <Typography variant="inherit" sx={{ fontSize: "13px" }}>
-                          Price:
-                        </Typography>
-                        <Typography variant="h6" sx={{ fontWeight: "600" }}>
-                          $ {howMany * price}
-                        </Typography>
-                      </Box>
+                        $ {howMany * price}
+                      </Typography>
                     </Box>
                   </Box>
                 </Box>
@@ -168,45 +153,24 @@ const Cart = () => {
           </Box>
           <Box
             sx={{
-              display: "flex",
-              p: 4,
-              pt: 0,
-              gap: 4,
+              p: 2,
             }}
           >
             <Button
-              // onClick={handleClick}
+              onClick={handleNavigate}
               variant="outlined"
-              sx={{ flex: "1" }}
-            >
-              Buy
-            </Button>
-            <Box
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-end",
+                width: "100%",
               }}
             >
-              <Typography variant="inherit" sx={{ fontSize: "13px" }}>
-                Total price:
-              </Typography>
-              <Typography variant="h6" sx={{ fontWeight: "600" }}>
-                $ {totalPrice.toFixed(2)}
-              </Typography>
-            </Box>
+              Your Cart
+            </Button>
           </Box>
         </Box>
       ) : (
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            width: "90%",
-            maxWidth: "550px",
-            mx: "auto",
-            backgroundColor: "white",
-            borderRadius: "15px",
+            width: "100%",
           }}
         >
           <Box
@@ -216,7 +180,6 @@ const Cart = () => {
               display: "block",
               overflow: "hidden",
               width: "100%",
-              borderRadius: "15px",
             }}
             src={EmptyCartImg}
             alt={"Empty Cart"}
@@ -227,4 +190,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default HoverCart;

@@ -39,8 +39,8 @@ const images = [
     imgPath: menImg,
   },
   {
-    path: "/women's-clouthing",
-    label: "Women's clouthing",
+    path: "/women's-clothing",
+    label: "Women's clothing",
     imgPath: womenImg,
   },
 ];

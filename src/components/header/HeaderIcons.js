@@ -1,10 +1,12 @@
 import * as React from "react";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
+import Box from "@mui/material/Box";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import HoverCart from "./HoverCart";
 import { useColorScheme } from "@mui/material/styles";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -20,15 +22,29 @@ const HeaderIcons = () => {
 
   return (
     <>
-      <IconButton
-        size="large"
-        color="inherit"
-        onClick={() => handleClick("/cart")}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-end",
+        }}
+        className={"cart--icon"}
       >
-        <Badge badgeContent={productsID.length} color="error">
-          <AddShoppingCartIcon />
-        </Badge>
-      </IconButton>
+        <IconButton
+          size="large"
+          color="inherit"
+          onClick={() => handleClick("/cart")}
+        >
+          <Badge badgeContent={productsID.length} color="error">
+            <AddShoppingCartIcon />
+          </Badge>
+        </IconButton>
+        <div className="cart--icon__hover--div">
+          <div className="cart--icon__hover">
+            <HoverCart />
+          </div>
+        </div>
+      </Box>
       <IconButton
         size="large"
         onClick={() => {
