@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
@@ -11,6 +10,7 @@ import {
 } from "../../redux/actions/productsActions";
 import CloseIcon from "@mui/icons-material/Close";
 import EmptyCartImg from "../../assets/emptyCart.webp";
+import CustomBtn from "../button/CustomBtn";
 
 const Cart = () => {
   const { userCart, totalPrice } = useSelector((state) => state.cart);
@@ -174,13 +174,15 @@ const Cart = () => {
               gap: 4,
             }}
           >
-            <Button
-              // onClick={handleClick}
+            <CustomBtn
               variant="outlined"
-              sx={{ flex: "1" }}
+              sx={{
+                flex: "1",
+              }}
+              blackStyle
             >
               Buy
-            </Button>
+            </CustomBtn>
             <Box
               sx={{
                 display: "flex",

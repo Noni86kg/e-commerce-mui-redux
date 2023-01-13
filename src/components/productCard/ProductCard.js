@@ -10,6 +10,7 @@ import Rating from "@mui/material/Rating";
 import { useDispatch, useSelector } from "react-redux";
 import { addProducts } from "../../redux/actions/productsActions";
 import { useNavigate } from "react-router-dom";
+import CustomBtn from "../button/CustomBtn";
 
 const ProductCard = ({ item, isSwipeableViews }) => {
   const { image, title, price, id } = item;
@@ -106,15 +107,15 @@ const ProductCard = ({ item, isSwipeableViews }) => {
             ${price}
           </Typography>
         </Box>
-        <Button
+        <CustomBtn
           variant="outlined"
-          sx={{ width: "100%" }}
           size="large"
           disabled={isAdded}
-          onClick={addProduct}
+          maxWidth
+          handleClick={addProduct}
         >
           {isAdded ? "Added to cart" : "Add to cart"}
-        </Button>
+        </CustomBtn>
       </CardActions>
     </Card>
   );

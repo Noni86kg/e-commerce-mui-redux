@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
@@ -11,6 +10,7 @@ import {
 } from "../../redux/actions/productsActions";
 import CloseIcon from "@mui/icons-material/Close";
 import EmptyCartImg from "../../assets/emptyCart.webp";
+import CustomBtn from "../button/CustomBtn";
 
 const HoverCart = () => {
   const { userCart } = useSelector((state) => state.cart);
@@ -151,21 +151,17 @@ const HoverCart = () => {
               );
             })}
           </Box>
-          <Box
+          <CustomBtn
+            variant="outlined"
+            handleClick={handleNavigate}
             sx={{
-              p: 2,
+              m: 2,
             }}
+            blackStyle
+            maxWidth
           >
-            <Button
-              onClick={handleNavigate}
-              variant="outlined"
-              sx={{
-                width: "100%",
-              }}
-            >
-              Your Cart
-            </Button>
-          </Box>
+            Your Cart
+          </CustomBtn>
         </Box>
       ) : (
         <Box

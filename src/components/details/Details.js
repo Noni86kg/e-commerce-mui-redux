@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
 import { getData } from "../../utility/Axios";
 import { useParams } from "react-router-dom";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -13,6 +12,7 @@ import Rating from "@mui/material/Rating";
 import SkeletonChildren from "../loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { addProducts } from "../../redux/actions/productsActions";
+import CustomBtn from "../button/CustomBtn";
 
 const Details = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -144,15 +144,15 @@ const Details = () => {
                 ${data.price}
               </Typography>
             </Box>
-            <Button
+            <CustomBtn
               variant="outlined"
-              sx={{ width: "100%" }}
               size="large"
               disabled={isAdded}
-              onClick={addProduct}
+              maxWidth
+              handleClick={addProduct}
             >
               {isAdded ? "Added to cart" : "Add to cart"}
-            </Button>
+            </CustomBtn>
           </CardActions>
         </Card>
       )}
