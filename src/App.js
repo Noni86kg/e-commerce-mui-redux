@@ -6,6 +6,7 @@ import Footer from "./components/footer/Footer";
 import Category from "./components/category/Category";
 import Details from "./components/details/Details";
 import Cart from "./components/cart/Cart";
+import LogIn from "./components/logIn/LogIn";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         />
         <Route path="/details/:id" element={<Details />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/LogIn" element={<LogIn />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />

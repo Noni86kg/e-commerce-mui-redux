@@ -107,3 +107,18 @@ body {
     display: block;
   }
 }
+
+.css-1mg8f6q-MuiInputBase-root-MuiInput-root:before,
+.css-1l5fmpg-MuiInputBase-root-MuiInput-root:before {
+  border-bottom: 1px solid #272727 !important;
+}
+
+.css-1l5fmpg-MuiInputBase-root-MuiInput-root:after,
+.css-1mg8f6q-MuiInputBase-root-MuiInput-root:after {
+  border-bottom: 2px solid #272727 !important;
+}
+
+.username > label,
+.css-1vhpemn-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: #272727 !important;
+}

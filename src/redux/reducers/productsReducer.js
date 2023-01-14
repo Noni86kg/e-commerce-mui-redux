@@ -73,12 +73,10 @@ export const productsReducer = (state = intialState, { type, payload }) => {
   }
 };
 
-export const selectedProductsReducer = (state = {}, { type, payload }) => {
+export const aboutUser = (state = { username: "" }, { type, payload }) => {
   switch (type) {
-    case ActionTypes.SELECTED_PRODUCT:
-      return { ...state, ...payload };
-    case ActionTypes.REMOVE_SELECTED_PRODUCT:
-      return {};
+    case ActionTypes.LOG_IN:
+      return { ...state, username: payload };
     default:
       return state;
   }

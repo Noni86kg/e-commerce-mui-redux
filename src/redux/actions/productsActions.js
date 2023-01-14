@@ -13,9 +13,17 @@ export const howManyProduct = (id, num) => {
     payload: { id, num },
   };
 };
+
 export const removeSelectedProduct = (id) => {
   return {
     type: ActionTypes.REMOVE_SELECTED_PRODUCT,
     payload: id,
+  };
+};
+
+export const logIn = (username) => {
+  return {
+    type: ActionTypes.LOG_IN,
+    payload: username,
   };
 };
