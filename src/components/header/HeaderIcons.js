@@ -13,7 +13,7 @@ import HoverCart from "./HoverCart";
 import { logIn } from "../../redux/actions/productsActions";
 import { useColorScheme } from "@mui/material/styles";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const HeaderIcons = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -23,6 +23,8 @@ const HeaderIcons = () => {
   const username = useSelector((state) => state.user.username);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
+  const { pathname } = location;
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -59,11 +61,13 @@ const HeaderIcons = () => {
             <AddShoppingCartIcon />
           </Badge>
         </IconButton>
-        <div className="cart--icon__hover--div">
-          <div className="cart--icon__hover">
-            <HoverCart />
+        {pathname !== "/cart" && pathname !== "/buying-process" && (
+          <div className="cart--icon__hover--div">
+            <div className="cart--icon__hover">
+              <HoverCart />
+            </div>
           </div>
-        </div>
+        )}
       </Box>
       <IconButton
         size="large"

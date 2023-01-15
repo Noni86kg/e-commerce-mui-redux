@@ -109,7 +109,7 @@ const FinalCheck = ({ handleBack, handleNext, steps }) => {
             }}
           >
             {userCart?.map((item) => {
-              const { id, price, title, image } = item;
+              const { id, price, title, image, howMany } = item;
               return (
                 <Box
                   key={id}
@@ -144,7 +144,7 @@ const FinalCheck = ({ handleBack, handleNext, steps }) => {
                     </Typography>
                   </Box>
                   <Typography variant="inherit" sx={{ fontWeight: 600 }}>
-                    ${price}
+                    {howMany}x ${price}
                   </Typography>
                 </Box>
               );

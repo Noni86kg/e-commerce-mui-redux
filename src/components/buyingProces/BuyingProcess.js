@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import Button from "@mui/material/Button";
+import CustomBtn from "../button/CustomBtn";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
 import CustomerInformations from "./CustomerInformations";
@@ -114,20 +114,9 @@ const BuyingProcess = () => {
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
                 <Box sx={{ flex: "1 1 auto" }} />
-                <Button
-                  sx={{
-                    color: isLight ? "#1976d2" : "white",
-                    backgroundColor: isLight ? "transparent" : "#1976d2",
-                    "&:hover": {
-                      background: isLight
-                        ? "rgba(var(--mui-palette-primary-mainChannel)"
-                        : "hsl(220, 79%, 46%)",
-                    },
-                  }}
-                  onClick={handleClick}
-                >
+                <CustomBtn blueStyle handleClick={handleClick}>
                   Go to home page
-                </Button>
+                </CustomBtn>
               </Box>
             </React.Fragment>
           ) : (

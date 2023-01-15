@@ -9,7 +9,6 @@ export const getData = async (path) => {
 
     return { productsData, loading: false };
   } catch (error) {
-    console.log(error);
     return { data: [{}], loading: true };
   }
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import { useTheme } from "@mui/material/styles";
 
 const CustomBtn = (props) => {
   const {
@@ -12,8 +13,12 @@ const CustomBtn = (props) => {
     maxWidth,
     sx,
     blackStyle,
+    blueStyle,
     color,
   } = props;
+
+  const theme = useTheme();
+  const isLight = theme.palette.mode === "light";
 
   const buttonProps = () => {
     let allProps = { ...sx };
@@ -29,6 +34,17 @@ const CustomBtn = (props) => {
         "&:hover": {
           border: "1px solid #272727",
           backgroundColor: "rgba(39, 39, 39, .25)",
+        },
+      };
+    } else if (blueStyle) {
+      allProps = {
+        ...allProps,
+        color: isLight ? "#1976d2" : "white",
+        backgroundColor: isLight ? "transparent" : "#1976d2",
+        "&:hover": {
+          background: isLight
+            ? "rgba(var(--mui-palette-primary-mainChannel)"
+            : "hsl(220, 79%, 46%)",
         },
       };
     }

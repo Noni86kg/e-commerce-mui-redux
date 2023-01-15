@@ -33,18 +33,7 @@ const FooterBtns = ({ activeStep, handleBack, handleNext, steps }) => {
         Back
       </CustomBtn>
       <Box sx={{ flex: "1 1 auto" }} />
-      <CustomBtn
-        handleClick={goNext}
-        sx={{
-          color: isLight ? "#1976d2" : "white",
-          backgroundColor: isLight ? "transparent" : "#1976d2",
-          "&:hover": {
-            background: isLight
-              ? "rgba(var(--mui-palette-primary-mainChannel)"
-              : "hsl(220, 79%, 46%)",
-          },
-        }}
-      >
+      <CustomBtn handleClick={goNext} blueStyle>
         {activeStep === steps.length - 1 ? "Finish" : "Next"}
       </CustomBtn>
     </Box>
