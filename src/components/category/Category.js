@@ -125,10 +125,10 @@ const Category = ({ path }) => {
               <Box
                 component="img"
                 sx={{
-                  height: "500px",
                   display: "block",
                   width: "100%",
                   objectFit: "cover",
+                  maxWidth: "862px",
                 }}
                 src={noProductImg}
                 alt={"No products"}
