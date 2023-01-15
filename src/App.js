@@ -7,6 +7,7 @@ import Category from "./components/category/Category";
 import Details from "./components/details/Details";
 import Cart from "./components/cart/Cart";
 import LogIn from "./components/logIn/LogIn";
+import BuyingProcess from "./components/buyingProces/BuyingProcess";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/LogIn" element={<LogIn />} />
         <Route path="*" element={<Error404 />} />
+        <Route path="/buying-process" element={<BuyingProcess />} />
       </Routes>
       <Footer />
     </>

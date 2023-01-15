@@ -8,6 +8,7 @@ import {
   howManyProduct,
   removeSelectedProduct,
 } from "../../redux/actions/productsActions";
+import { useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import EmptyCartImg from "../../assets/emptyCart.webp";
 import CustomBtn from "../button/CustomBtn";
@@ -16,6 +17,7 @@ const Cart = () => {
   const { userCart, totalPrice } = useSelector((state) => state.cart);
   const theme = useTheme();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const changeHowMany = (id, num) => {
     if (num !== 0) {
@@ -25,6 +27,10 @@ const Cart = () => {
 
   const deleteItem = (id) => {
     dispatch(removeSelectedProduct(id));
+  };
+
+  const handleNavigate = () => {
+    navigate("/buying-process");
   };
 
   return (
@@ -180,6 +186,7 @@ const Cart = () => {
                 flex: "1",
               }}
               blackStyle
+              handleClick={handleNavigate}
             >
               Buy
             </CustomBtn>

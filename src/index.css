@@ -108,17 +108,72 @@ body {
   }
 }
 
-.css-1mg8f6q-MuiInputBase-root-MuiInput-root:before,
-.css-1l5fmpg-MuiInputBase-root-MuiInput-root:before {
+.password__valid .css-1mg8f6q-MuiInputBase-root-MuiInput-root:before,
+.input__valid .css-1l5fmpg-MuiInputBase-root-MuiInput-root:before {
   border-bottom: 1px solid #272727 !important;
 }
 
-.css-1l5fmpg-MuiInputBase-root-MuiInput-root:after,
-.css-1mg8f6q-MuiInputBase-root-MuiInput-root:after {
+.input__valid .css-1l5fmpg-MuiInputBase-root-MuiInput-root:after,
+.password__valid .css-1mg8f6q-MuiInputBase-root-MuiInput-root:after {
   border-bottom: 2px solid #272727 !important;
 }
 
-.username > label,
-.css-1vhpemn-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+.input__valid > label,
+.password__valid > label {
   color: #272727 !important;
+}
+
+.input__valid > div > input {
+  color: #272727 !important;
+}
+
+.input__error > div > input {
+  color: var(--mui-palette-error-main) !important;
+}
+
+@media (max-width: 767px) {
+  .stepLabel__disable > span:nth-child(2),
+  .stepLabel__active > span:nth-child(2) {
+    display: none;
+  }
+}
+
+.password__error > label {
+  color: var(--mui-palette-error-main) !important;
+}
+
+.password__error .css-1mg8f6q-MuiInputBase-root-MuiInput-root:before {
+  border-bottom: 1px solid var(--mui-palette-error-main) !important;
+}
+
+.password__error .css-1mg8f6q-MuiInputBase-root-MuiInput-root:after {
+  border-bottom: 2px solid var(--mui-palette-error-main) !important;
+}
+
+.password__error .MuiIconButton-root {
+  color: var(--mui-palette-error-main) !important;
+}
+
+.stepLabel__active > span:nth-child(1) > svg {
+  color: hsl(210, 79%, 46%) !important;
+}
+
+.stepLabel__active > span:nth-child(1) > svg > text {
+  fill: white !important;
+}
+
+.stepLabel__disable > span:nth-child(1) > svg {
+  color: rgba(0, 0, 0, 0.38) !important;
+}
+
+.stepLabel__disable > span:nth-child(1) > svg > text {
+  fill: white !important;
+}
+
+.stepLabel__active > span:nth-child(2) > span {
+  color: #272727 !important;
+}
+
+.stepLabel__disable > span:nth-child(2) > span {
+  color: rgba(0, 0, 0, 0.6) !important;
 }

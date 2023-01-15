@@ -12,6 +12,7 @@ const CustomBtn = (props) => {
     maxWidth,
     sx,
     blackStyle,
+    color,
   } = props;
 
   const buttonProps = () => {
@@ -43,6 +44,7 @@ const CustomBtn = (props) => {
         variant={variant}
         onClick={handleClick}
         sx={buttonProps()}
+        color={color}
       >
         {children}
       </Button>

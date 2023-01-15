@@ -59,3 +59,31 @@ function useDebounce(value, delay = 500) {
 }
 
 export default useDebounce;
+
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )
+    ? false
+    : true;
+};
+
+const validatePhone = (email) => {
+  return String(email).match(
+    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{1,6}$/im
+  )
+    ? false
+    : true;
+};
+
+export const handleRequired = (name, value) => {
+  if (name === "Phone") {
+    return validatePhone(value);
+  } else if (name === "Mail") {
+    return validateEmail(value);
+  } else {
+    return value === "";
+  }
+};

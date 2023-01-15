@@ -5,6 +5,18 @@ const intialState = {
   totalPrice: 0,
 };
 
+const userIntialState = {
+  username: "",
+  customerInfo: {
+    name: "",
+    surname: "",
+    phone: "",
+    mail: "",
+    address: "",
+  },
+  deliveryModel: 0,
+};
+
 const handleTotalPrice = (products) => {
   const prices = products.map((item) => item.price * item.howMany);
 
@@ -19,7 +31,7 @@ const handleTotalPrice = (products) => {
 export const productsReducer = (state = intialState, { type, payload }) => {
   let newUserCart = [];
   let newTotalPrice = [];
-  console.log(type);
+
   switch (type) {
     case ActionTypes.ADD_PRODUCTS:
       const newProduct = payload;
@@ -68,15 +80,29 @@ export const productsReducer = (state = intialState, { type, payload }) => {
       };
       break;
 
+    case ActionTypes.RESTART_CART:
+      return intialState;
+      break;
+
     default:
       return state;
   }
 };
 
-export const aboutUser = (state = { username: "" }, { type, payload }) => {
+export const aboutUser = (state = userIntialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.LOG_IN:
       return { ...state, username: payload };
+      break;
+
+    case ActionTypes.HANDLE_CUSTOMER_INFO:
+      return { ...state, customerInfo: payload };
+      break;
+
+    case ActionTypes.HANDLE_DELIVERY_MODE:
+      return { ...state, deliveryModel: payload };
+      break;
+
     default:
       return state;
   }

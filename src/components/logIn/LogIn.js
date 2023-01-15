@@ -117,9 +117,13 @@ const LogIn = () => {
             value={username.value}
             error={username.error}
             helperText={username.error ? "Cannot be empty" : ""}
-            className={"username"}
+            className={username.error ? "input__error" : "input__valid"}
           />
-          <FormControl sx={{ width: "100%" }} variant="standard">
+          <FormControl
+            sx={{ width: "100%" }}
+            variant="standard"
+            className={password.error ? "password__error" : "password__valid"}
+          >
             <InputLabel
               htmlFor="standard-adornment-password"
               error={password.error}
